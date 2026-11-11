@@ -6,8 +6,8 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout sources
-        uses: actions/checkout@v4
+      - name: Gradle build
+        run: ./gradlew :1.21.1-fabric:build
 
       - name: Setup Java
         uses: actions/setup-java@v4
@@ -28,5 +28,5 @@ jobs:
         uses: actions/upload-artifact@v7
         with:
           name: voxy-artifacts
-          path: build/libs/*.jar
+          path: versions/1.21.1-fabric/build/libs/*.jar
           archive: false

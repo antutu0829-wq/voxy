@@ -1,3 +1,4 @@
+
 name: manual-artifact
 
 on: [ workflow_dispatch ]
@@ -6,8 +7,8 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Gradle build
-        run: ./gradlew :1.21.1-fabric:build
+      - name: Checkout sources
+        uses: actions/checkout@v4
 
       - name: Setup Java
         uses: actions/setup-java@v4
@@ -22,7 +23,7 @@ jobs:
           cache-cleanup: always
 
       - name: Gradle build
-        run: ./gradlew build
+        run: ./gradlew :1.21.1-fabric:build
 
       - name: Upload artifact
         uses: actions/upload-artifact@v7

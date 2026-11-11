@@ -30,4 +30,3 @@ jobs:
         with:
           name: voxy-artifacts
           path: versions/1.21.1-fabric/build/libs/*.jar
-          archive: false
